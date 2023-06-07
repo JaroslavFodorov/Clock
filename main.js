@@ -231,4 +231,9 @@ openTimer();
     })
 }
 timer();*/
+
+function Word() {
+    console.log('Hello world')
+}
+Word();
     
