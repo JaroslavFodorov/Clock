@@ -27,7 +27,7 @@ function day() {
 day();
 
 function deadline() {
-    const form = document.querySelector(".timer-form")
+    const form = document.querySelector(".timer-form");
     let getHour = document.querySelector(".timer-clock__hour");
     let getMinute = document.querySelector(".timer-clock__minute");
     let getSecond = document.querySelector(".timer-clock__second");
@@ -40,20 +40,22 @@ function deadline() {
         form.addEventListener('submit', event => {
             event.preventDefault();
 
-            const numbers = [];
             for(let element of form.elements) {
                 if(element.tagName === 'INPUT') {
-                    numbers.push(element.value);
+                    values.push(element.value);
                 }
             }
 
-            values.push(numbers);
-
-            h = values[0][0];
-            m = values[0][1];
-            s = values[0][2];
+            h = values[0];
+            m = values[1];
+            s = values[2];
 
             showTimer(h, m, s);
+
+            const timer = document.querySelector('.timer-clock');
+            timer.style.display = 'flex';
+            const formTimer = document.querySelector('.timer');
+            formTimer.style.display = 'none';
         })
     })  
     document.querySelector('.button-second__start').addEventListener('click', () => {      
@@ -72,11 +74,20 @@ function deadline() {
         stop.style.display= 'none';
     })
 
-    document.querySelector('.cancel-btn').addEventListener('click', clearTimer);
+    document.querySelector('.cancel-btn').addEventListener('click', () => {
+        clearTimer();
+        const timer = document.querySelector('.timer-clock');
+        timer.style.display = 'none';
+        const formTimer = document.querySelector('.timer');
+        formTimer.style.display = 'block';
+    });
 
     function clearTimer() {
         clearInterval(time);
         values = [];
+        h = 0;
+        m = 0;
+        s = 0;
         getHour.innerText = '00';
         getMinute.innerText = '00';
         getSecond.innerText = '00';
@@ -89,6 +100,7 @@ function deadline() {
         else if(h === 0 && m === 0 && s === 0) {
             clearInterval(time);
             alert("Время вышло!");
+            console.log("Время вышло");
         }
         else if (h > 0 || h == 0 && m > 0 && s == 0) {
             s = 59;
