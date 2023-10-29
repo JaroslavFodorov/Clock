@@ -95,7 +95,7 @@ function deadline() {
 
     function timer() {
         if(s > 0) {
-            s--;
+            console.log(s--);
         }
         /*else if (h > 0 || h == 0 && m > 0 && s == 0) {
             s = 59;
@@ -103,7 +103,7 @@ function deadline() {
         }*/
         else if (m > 0) {
             s = 59;
-            m--;
+            console.log(m--);
         }
         /*else if (h > 0 && m == 0) {
             m = 59;
@@ -112,7 +112,7 @@ function deadline() {
         else if (h > 0) {
             m = 59;
             s = 59;
-            h--;
+            console.log(h--);
         }
          else if(h === 0 && m === 0 && s === 0) {
             clearInterval(time);
