@@ -77,7 +77,7 @@ function deadline() {
     document.querySelector('.cancel-btn').addEventListener('click', () => {
         clearTimer();
         let hour = document.querySelector('#timer-hour');
-        hour.innerText = '';
+        hour.innerText = '00';
         const timer = document.querySelector('.timer-clock');
         timer.style.display = 'none';
         const formTimer = document.querySelector('.timer');
