@@ -102,6 +102,7 @@ function deadline() {
             m--;
         }*/
         else if (m > 0) {
+            s = 59;
             m--;
         }
         /*else if (h > 0 && m == 0) {
@@ -109,6 +110,8 @@ function deadline() {
             h--;
         }*/
         else if (h > 0) {
+            m = 59;
+            s = 59;
             h--;
         }
          else if(h === 0 && m === 0 && s === 0) {
