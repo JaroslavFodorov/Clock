@@ -97,12 +97,18 @@ function deadline() {
         if(s > 0) {
             s--;
         }
-        else if (h > 0 || h == 0 && m > 0 && s == 0) {
+        /*else if (h > 0 || h == 0 && m > 0 && s == 0) {
             s = 59;
             m--;
-        } 
-        else if (h > 0 && m == 0) {
+        }*/
+        else if (m > 0) {
+            m--;
+        }
+        /*else if (h > 0 && m == 0) {
             m = 59;
+            h--;
+        }*/
+        else if (h > 0) {
             h--;
         }
          else if(h === 0 && m === 0 && s === 0) {
