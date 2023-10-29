@@ -114,7 +114,7 @@ function deadline() {
             s = 59;
             console.log(h--);
         }
-         else if(h === 0 && m === 0 && s === 0) {
+         else if(h == 0 && m == 0 && s == 0) {
             clearInterval(time);
             alert("Время вышло!");
             console.log("Время вышло");
